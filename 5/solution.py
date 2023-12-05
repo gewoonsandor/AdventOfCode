@@ -50,11 +50,4 @@ def find_route(seed, seq):
 
     return seed
 
-output = float('inf')
-while len(seeds) != 0:
-    start = seeds.pop(0)
-    length = seeds.pop(0)
-    for i in range(start, start + length):
-        output = min(output, find_route(i, seq))
-
-print(output)
+print(min([find_route(x, seq) for x in seeds]))
